@@ -1,0 +1,6 @@
+OBJ=res\assets\person.obj
+NAME=Person
+CULL=true
+BOXES=1
+-1.1000001|-4.399998|-1.4000002
+1.5000001|9.5|2.7999995

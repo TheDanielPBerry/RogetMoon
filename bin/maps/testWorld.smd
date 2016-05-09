@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<Map>
+	
+	<XStrip repeat="60" size="1" x="-30">
+		<ZStrip repeat="60" size="1" z="-30">
+			<white_tile y="-10" scale-x="1" />
+		</ZStrip>
+	</XStrip>
+	
+	<XStrip repeat="10" size="0">
+		<rocket x="(R()*18)-12" y="(R()*30)-5" z="(R()*18)-12" dynamic="true" />
+	</XStrip>
+</Map>

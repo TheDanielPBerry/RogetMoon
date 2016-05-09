@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+
+<Map>
+	<XStrip repeat="10" size="0.8">
+		<chair y="-2" />
+	</XStrip>
+</Map>

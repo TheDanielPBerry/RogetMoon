@@ -1,0 +1,6 @@
+OBJ=res\assets\crate.obj
+NAME=Crate
+CULL=true
+BOXES=1
+-1|-1|-1
+2|2|2

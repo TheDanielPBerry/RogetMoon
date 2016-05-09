@@ -1,0 +1,6 @@
+OBJ=res\assets\sword.obj
+NAME=Sword
+CULL=true
+BOXES=1
+-0.57|-4.2|-1.4
+1.1|22.6|2.8

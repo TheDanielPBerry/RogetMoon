@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<Map>	
+	
+	<crate y="-2" />
+	<crate x="1" y="-2" />
+	<crate x="2" y="-2" />
+	<crate x="3" y="-2" />
+	<Strip zstep="0.2" ystep="0.2" repeat="100">
+		<Strip xstep="1" repeat="4">
+			<crate y="-2" z="1" />
+		</Strip>
+	</Strip>
+</Map>

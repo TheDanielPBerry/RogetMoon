@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D version="3.0" profile="Immersive" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd">
+	<head>
+		<meta name="filename" content="crate.x3d" />
+		<meta name="generator" content="Blender 2.76 (sub 0)" />
+	</head>
+	<Scene>
+		<NavigationInfo headlight="false"
+		                visibilityLimit="0.0"
+		                type='"EXAMINE", "ANY"'
+		                avatarSize="0.25, 1.75, 0.75"
+		                />
+		<Background DEF="WO_World"
+		            groundColor="0.051 0.051 0.051"
+		            skyColor="0.051 0.051 0.051"
+		            />
+		<Transform DEF="Cube_TRANSFORM"
+		           translation="0.000000 0.000000 -0.357454"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 0.707107 0.707107 3.141593"
+		           >
+			<Transform DEF="Cube_ifs_TRANSFORM"
+			           translation="0.000000 0.000000 0.000000"
+			           scale="1.000000 1.000000 1.000000"
+			           rotation="1.000000 0.000000 0.000000 0.000000"
+			           >
+				<Group DEF="group_ME_Cube">
+					<Shape>
+						<Appearance>
+							<ImageTexture DEF="IM_crate_png"
+							              url='"Java/Roget/res/images/crate.png" "crate.png" "C:/Users/daniel.berry/Documents/Java/Roget/res/images/crate.png"'
+							              />
+							<TextureTransform 
+							                  translation="0.000000 0.000000"
+							                  scale="1.000000 1.000000"
+							                  rotation="0.000000"
+							                  />
+							<Material DEF="MA_Material_001"
+							          diffuseColor="0.800 0.800 0.800"
+							          specularColor="0.001 0.001 0.001"
+							          emissiveColor="0.000 0.000 0.000"
+							          ambientIntensity="0.333"
+							          shininess="0.098"
+							          transparency="0.0"
+							          />
+						</Appearance>
+						<IndexedTriangleSet solid="true"
+						                    normalPerVertex="true"
+						                    index="0 1 2 0 2 3 4 5 6 4 6 7 0 8 9 0 9 10 11 12 6 11 6 13 14 15 16 14 16 3 4 17 18 4 18 19 "
+						                    >
+							<Coordinate point="1.000000 1.000000 -1.000000 1.000000 -1.000000 -1.000000 -1.000000 -1.000000 -1.000000 -1.000000 1.000000 -1.000000 1.000000 0.999999 1.000000 -1.000000 1.000000 1.000000 -1.000000 -1.000000 1.000000 0.999999 -1.000001 1.000000 1.000000 0.999999 1.000000 0.999999 -1.000001 1.000000 1.000000 -1.000000 -1.000000 1.000000 -1.000000 -1.000000 0.999999 -1.000001 1.000000 -1.000000 -1.000000 -1.000000 -1.000000 -1.000000 -1.000000 -1.000000 -1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000 1.000000 -1.000000 -1.000000 1.000000 -1.000000 -1.000000 1.000000 1.000000 " />
+							<Normal vector="0.577349 0.577349 -0.577349 0.577349 -0.577349 -0.577349 -0.577349 -0.577349 -0.577349 -0.577349 0.577349 -0.577349 0.577349 0.577349 0.577349 -0.577349 0.577349 0.577349 -0.577349 -0.577349 0.577349 0.577349 -0.577349 0.577349 0.577349 0.577349 0.577349 0.577349 -0.577349 0.577349 0.577349 -0.577349 -0.577349 0.577349 -0.577349 -0.577349 0.577349 -0.577349 0.577349 -0.577349 -0.577349 -0.577349 -0.577349 -0.577349 -0.577349 -0.577349 -0.577349 0.577349 -0.577349 0.577349 0.577349 0.577349 0.577349 -0.577349 -0.577349 0.577349 -0.577349 -0.577349 0.577349 0.577349 " />
+							<TextureCoordinate point="0.0000 0.0000 1.0000 0.0000 1.0000 1.0000 0.0000 1.0000 0.0000 0.0000 1.0000 0.0000 1.0000 1.0000 0.0000 1.0000 1.0000 0.0000 1.0000 1.0000 0.0000 1.0000 0.0000 0.0000 1.0000 0.0000 0.0000 1.0000 0.0000 0.0000 1.0000 0.0000 1.0000 1.0000 1.0000 0.0000 1.0000 1.0000 0.0000 1.0000 " />
+						</IndexedTriangleSet>
+					</Shape>
+				</Group>
+			</Transform>
+		</Transform>
+		<Transform DEF="Lamp_TRANSFORM"
+		           translation="-2.143003 -2.310364 2.118437"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="-0.498084 -0.762016 -0.413815 1.513875"
+		           >
+			<PointLight DEF="LA_Lamp"
+			            ambientIntensity="0.0000"
+			            color="1.0000 1.0000 1.0000"
+			            intensity="0.5714"
+			            radius="30.0000" 
+			            location="-0.0000 -0.0000 -0.0000"
+			            />
+		</Transform>
+		<Transform DEF="Camera_TRANSFORM"
+		           translation="-7.481132 5.343665 -6.507640"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="-0.093039 -0.968741 -0.229967 2.347036"
+		           >
+			<Viewpoint DEF="CA_Camera"
+			           centerOfRotation="0 0 0"
+			           position="0.00 0.00 -0.00"
+			           orientation="-0.92 0.35 0.17 0.00"
+			           fieldOfView="0.858"
+			           />
+		</Transform>
+		<Transform DEF="Lamp_001_TRANSFORM"
+		           translation="1.945725 2.274317 -2.794438"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="-0.498084 -0.762016 -0.413815 1.513875"
+		           >
+			<PointLight DEF="LA_Lamp_001"
+			            ambientIntensity="0.0000"
+			            color="1.0000 1.0000 1.0000"
+			            intensity="0.5714"
+			            radius="30.0000" 
+			            location="0.0000 0.0000 0.0000"
+			            />
+		</Transform>
+	</Scene>
+</X3D>

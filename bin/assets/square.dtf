@@ -1,0 +1,15 @@
+NAME=square
+TEXTURE=res\images\crate.png
+CULL=false
+FACES=1|4
+-0.5|-0.5|0.0
+0.5|-0.5|0.0
+0.5|0.5|0.0
+-0.5|0.5|0.0
+TEXTURE_MAPS=1
+0.0/0.0
+1.0/0.0
+1.0/1.0
+0.0/1.0
+BOXES=0
+

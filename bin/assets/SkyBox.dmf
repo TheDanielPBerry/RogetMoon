@@ -1,0 +1,4 @@
+OBJ=res\assets\skybox.obj
+NAME=SkyBox
+CULL=false
+BOXES=0
