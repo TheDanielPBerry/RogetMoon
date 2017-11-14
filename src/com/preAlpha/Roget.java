@@ -30,7 +30,7 @@ public class Roget {
     private static boolean step = false;
     private static boolean firstPerson = true;
     private static final float stepHeight = 0.42f;
-    private static final float gravityAcceleration = -0.01f;
+    private static final float gravityAcceleration = -0.02f;
     
     private static void mainLoop() {
     	long timeStart = System.currentTimeMillis();
@@ -102,6 +102,12 @@ public class Roget {
 	    	camera.velocity.x *= 0.7;
 	    	camera.velocity.z *= 0.7;
 		}
+		for(short i=0; i<articles.size(); i++) {
+			if(i!=cameraId && articles.get(i).dynamic_object) {
+				articles.get(i).velocity.x *= 0.8;
+				articles.get(i).velocity.z *= 0.8;
+			}
+		}
     	for(Article a : articles) {
     		if(a.dynamic_object) {
 				a.velocity.y += gravityAcceleration;
@@ -151,12 +157,21 @@ public class Roget {
 	    										}
 	    										top.pos.y += yJump;
 	    										if(yJump==0) {
+	    			    							if(bottom.dynamic_object) {
+	    			    								bottom.velocity.x = top.velocity.x;
+	    			    							}
 				    								top.velocity.x = 0;
 		    									}
 		    								}else {
+    			    							if(bottom.dynamic_object) {
+    			    								bottom.velocity.x = top.velocity.x;
+    			    							}
 			    								top.velocity.x = 0;
 			    							}
 		    							}else {
+			    							if(bottom.dynamic_object) {
+			    								bottom.velocity.x = top.velocity.x;
+			    							}
 		    								top.velocity.x = 0;
 		    							}
 		    						}
@@ -188,7 +203,10 @@ public class Roget {
 		    								jump = true;
 		    								step = true;
 		    							}
-	    								top.velocity.y = -top.velocity.y;
+		    							if(bottom.dynamic_object) {
+		    								bottom.velocity.y = top.velocity.y;
+		    							}
+	    								top.velocity.y = 0;
 		    							break;
 		    						}
 		    					}
@@ -233,12 +251,21 @@ public class Roget {
 	    										}
 	    										top.pos.y += yJump;
 	    										if(yJump==0) {
+	    			    							if(bottom.dynamic_object) {
+	    			    								bottom.velocity.z = top.velocity.z;
+	    			    							}
 				    								top.velocity.z = 0;
 		    									}
 		    								}else {
+    			    							if(bottom.dynamic_object) {
+    			    								bottom.velocity.z = top.velocity.z;
+    			    							}
 			    								top.velocity.z = 0;
 			    							}
 		    							} else {
+			    							if(bottom.dynamic_object) {
+			    								bottom.velocity.z = top.velocity.z;
+			    							}
 		    								top.velocity.z = 0;
 		    							}
 		    						}
@@ -363,14 +390,14 @@ public class Roget {
 			                	articles.add(step);
 		                    }
 	                    }*/
-
+	                    
 	                	LWArticle floor2 = new LWArticle(stepModel);
 	                	floor2.dynamic_object = true;
 	                	floor2.pos = new Vector3f(15.8f,12, 35f);
 	                	floor2.scale(new Vector3f(20f,0.15f,20f));
 	                	articles.add(floor2);
 	                	
-
+	                	
 	                	VBOArticle bx = (VBOArticle) Article.loadArticle("res\\assets\\Sword.dmf");
 	                	bx.scale(new Vector3f(0.5f,0.25f,0.5f));
                 		articles.add(bx);
@@ -383,8 +410,17 @@ public class Roget {
 	                		}
 	                	}
 	                	
-	                    
-	                    
+	                	
+	                	VBOArticle elevatorImport = (VBOArticle) Article.loadArticle("res\\assets\\Box.dmf");
+                		articles.add(elevatorImport);
+                		
+                		Elevator elevator = new Elevator(elevatorImport);
+                		elevator.scale(new Vector3f(1.8f,1f,1.8f));
+                		elevator.pos = new Vector3f(-20f, 0f,-20f);
+                		elevator.speed = 0.1f;
+                		elevator.oscillationFrequency = 0.005f;
+                		articles.add(elevator);
+                		
 	                    
 	                	Article floor = Article.loadArticle("res\\assets\\whitetile.dmf");
 	                	floor.scale(new Vector3f(4f, 1f, 4f));
@@ -392,7 +428,11 @@ public class Roget {
 	                        for(byte y=-60; y<60; y+=4) {
 	                        	Article a  = new Article(floor);
 	                        	a.pos.x = x;
-	                        	a.pos.y = -10f;
+	                        	if(x==-20 && y==-20){
+		                        	a.pos.y = -12f;
+	                        	}else {
+		                        	a.pos.y = -10f;
+	                        	}
 	                        	a.pos.z = y;
 	                            articles.add(a);
 	                        }
@@ -448,14 +488,14 @@ public class Roget {
 	                    	left.pos.x = 13;
 	                    	left.pos.y = 20;
 	                    	left.pos.z = x;
-	                        left.velocity = new Vector3f(0.01f, 0,0);
+	                        left.velocity = new Vector3f(1f, 0,0);
 	                        articles.add(left);
 	                        
 	                    	Article right  = new Article(chairR);
 	                    	right.pos.x = 19;
 	                    	right.pos.y = 20;
 	                    	right.pos.z = x;
-	                        right.velocity = new Vector3f(-0.01f, 0,0);
+	                        right.velocity = new Vector3f(-1f, 0,0);
 	                        articles.add(right);
 	                    }
 	                    for(byte x=0; x<3; x++) {
@@ -668,7 +708,7 @@ public class Roget {
     	pressed=true;
     }
     public static void mouseRelease(int button) {
-    	if(button == GLFW_MOUSE_BUTTON_3) {
+    	if(button == GLFW_MOUSE_BUTTON_1) {
     		firstPerson=!firstPerson;
     	}
     	pressed=false;

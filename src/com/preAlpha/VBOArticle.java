@@ -87,6 +87,7 @@ public class VBOArticle extends Article {
 		glBindBuffer(GL_ARRAY_BUFFER, vboId);
 		glBufferData(GL_ARRAY_BUFFER, buffer, GL_STATIC_DRAW);
 		texturePath = OBJArticle.loadOBJTexture(filePath);
+		System.out.println(texturePath);
 		texture = Texture.loadTexture(texturePath);
 		pos = new Vector3f();
 		quat = new Vector4f(0,0,0,0);
